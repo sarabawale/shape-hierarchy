@@ -1,14 +1,20 @@
 # Shape Hierarchy and Categorization
 
-One Paragraph of the project description
+One of the most whimsical pastimes is cloud-watching, where we can find dragons, castles, even spaceships among the clouds. But how do we recognize these clouds as distinct shapes? To explore this question, we used an open access database for 2D shape structure investigation compiled by Carlier, Leonard, Hahmann, Morin, and Collins. The researchers presented users with a variety of shapes and asked them to deconstruct the shape into the main shape, 1-2 levels of subparts, and details. Users indicated these regions by using four different colors with each color representing the importance of that part to defining the whole shape - in essence, defining a hierarchy. The researchers referred to these recolored images as annotations. Our project took this a step further by investigating whether we could use machine learning to sort users into categories. We noticed that some users simply annotated the shapes like they were coloring in a coloring book rather than creating a reasonable shape hierarchy. We wanted to remove these "artists" from the dataset but did not want to comb through all 42,0000 annotations by hand. Ultimately we used k-means clustering to see if an unsupervised learning model could identify artists as a cluster, and perhaps create further distinctions in the dataset we were unaware of.
 
-This was the final project for our Machine Learning class.
-
-See the <a href="http://2dshapesstructure.github.io">original project website</a> for a more comprehensive overview of the research study.
+See project-report.pdf for a more comphrensive explanation of the project and visit the [shape database site](http://2dshapesstructure.github.io) to learn more about the original research study.
 
 ## Getting Started
 
-Directory Structure:
+### About the Database
+
+The database contains 1,255 different types of shapes with 2,861 different users annotating the shapes. Not every user annotated every shape, so there is variability in the types of annotations. Each annotation is a string of digits from 0 to 3, and each number represents one of the four colors users utilized to represent the shape hierarchy. Each shape had at least 24 annotations.
+
+Example annotations (taken from database website):
+
+![Example annotations](http://2dshapesstructure.github.io/img/bigpicture.png)
+
+### Directory Structure
 
   * clusters
     * ... # random samples from each cluster  
@@ -18,6 +24,7 @@ Directory Structure:
     * ... # JSON shape files
   * our_clusters
     * ... # example clusters
+    
   * annotationTable.csv
   * dataset.mat
   * displayShape.m
@@ -36,9 +43,10 @@ Run the runMe.m file and wait for results. The amount of clusters is currently s
 
 Expected output: the MATLAB console will display model parameters and cluster data.
 
-*There are NO popup figures; we suppressed the popups because of the size of the dataset, but the PNG files will be created inside the appropriate folders for viewing later*
+**There are NO popup figures; we suppressed the popups because of the size of the dataset, but the PNG files are created inside the appropriate folders for viewing later*
 
 Data files: dataset.mat, annotationTable.csv
+
 MATLAB function to run: runMe.m
 
 ### Example console output
@@ -74,8 +82,6 @@ MATLAB function to run: runMe.m
 ```
 
 ## Authors
-
-This sub-project:
 
   * **Sara Bawale**
   * Caroline Dahl
